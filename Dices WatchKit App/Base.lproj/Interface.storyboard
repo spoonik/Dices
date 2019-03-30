@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11185.3" systemVersion="15G31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11151.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11074"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFCompactText-Regular.otf">
+            <string>.SFCompactText-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Dices-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="DiceView" title="Dices" id="AgC-eL-Hgc" customClass="DiceController" customModule="Dices_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" id="FJI-w3-uJB">
+                            <items>
+                                <button width="0.59999999999999998" height="33" alignment="center" verticalAlignment="center" title="Roll" id="hTy-VO-OIq">
+                                    <color key="titleColor" red="1" green="0.68564356739999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="19"/>
+                                    <connections>
+                                        <action selector="roll" destination="AgC-eL-Hgc" id="Nrw-Vg-b7Q"/>
+                                    </connections>
+                                </button>
+                                <button width="0.40000000000000002" height="33" alignment="center" verticalAlignment="center" title="Unlock" id="oW3-Hi-h0N">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                    <connections>
+                                        <action selector="pushReset" destination="AgC-eL-Hgc" id="18C-Ma-LrB"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" spacing="4" id="FBo-N1-xJO">
+                            <items>
+                                <button width="0.33000000000000002" height="50" alignment="center" backgroundImage="TransDice1" id="JE9-uc-pzY">
+                                    <fontDescription key="font" name=".SFCompactText-Regular" family=".SF Compact Text" pointSize="40"/>
+                                    <connections>
+                                        <action selector="pushDice1" destination="AgC-eL-Hgc" id="O1Y-wZ-rsB"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33000000000000002" height="50" alignment="center" backgroundImage="TransDice1" id="SKZ-co-9i6">
+                                    <fontDescription key="font" name=".SFCompactText-Regular" family=".SF Compact Text" pointSize="40"/>
+                                    <connections>
+                                        <action selector="pushDice2" destination="AgC-eL-Hgc" id="EZH-fw-fgE"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33000000000000002" height="50" alignment="center" backgroundImage="TransDice1" id="iU7-dh-dqw">
+                                    <fontDescription key="font" name=".SFCompactText-Regular" family=".SF Compact Text" pointSize="40"/>
+                                    <connections>
+                                        <action selector="pushDice3" destination="AgC-eL-Hgc" id="MSD-bh-OCY"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" spacing="4" id="egR-M4-Av3">
+                            <items>
+                                <button width="0.33000000000000002" height="50" alignment="center" backgroundImage="TransDice1" id="Upm-WS-DE4">
+                                    <fontDescription key="font" name=".SFCompactText-Regular" family=".SF Compact Text" pointSize="40"/>
+                                    <connections>
+                                        <action selector="pushDice4" destination="AgC-eL-Hgc" id="fdj-7y-E0w"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33000000000000002" height="50" alignment="center" backgroundImage="TransDice1" id="eJu-fY-RPV">
+                                    <fontDescription key="font" name=".SFCompactText-Regular" family=".SF Compact Text" pointSize="40"/>
+                                    <connections>
+                                        <action selector="pushDice5" destination="AgC-eL-Hgc" id="RPq-hv-lI1"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33000000000000002" height="50" alignment="center" backgroundImage="TransDice1" id="orS-b7-4eg">
+                                    <fontDescription key="font" name=".SFCompactText-Regular" family=".SF Compact Text" pointSize="40"/>
+                                    <connections>
+                                        <action selector="pushDice6" destination="AgC-eL-Hgc" id="UNJ-pC-0l1"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="dice1" destination="JE9-uc-pzY" id="rF7-fx-MCB"/>
+                        <outlet property="dice2" destination="SKZ-co-9i6" id="F3W-Iw-oS5"/>
+                        <outlet property="dice3" destination="iU7-dh-dqw" id="WvR-c9-zJu"/>
+                        <outlet property="dice4" destination="Upm-WS-DE4" id="ij9-PY-DlO"/>
+                        <outlet property="dice5" destination="eJu-fY-RPV" id="7gn-zp-WaY"/>
+                        <outlet property="dice6" destination="orS-b7-4eg" id="3co-vF-yFF"/>
+                        <segue destination="BvS-5m-bX0" kind="relationship" relationship="nextPage" id="opy-rD-inv"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="39" y="-219"/>
+        </scene>
+        <!--Players-->
+        <scene sceneID="6wV-3m-5Tm">
+            <objects>
+                <controller identifier="PlayerView" title="Players" id="BvS-5m-bX0" customClass="PlayerControllerInterfaceController" customModule="Dices_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="DLH-r7-Ecv">
+                            <items>
+                                <group width="1" alignment="left" id="pi2-cS-FfR">
+                                    <items>
+                                        <label alignment="left" text="Player1" id="EOR-ly-0xi"/>
+                                        <label alignment="right" text="0" id="Yx5-UM-vci"/>
+                                    </items>
+                                </group>
+                                <slider width="1" alignment="left" maximum="50" steps="50" id="1gH-kA-Tnf">
+                                    <connections>
+                                        <action selector="setPlayerScore1:" destination="BvS-5m-bX0" id="pma-QT-abw"/>
+                                    </connections>
+                                </slider>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" layout="vertical" id="LgH-Bd-ngN">
+                            <items>
+                                <group width="1" alignment="left" id="wnu-Aq-hjO">
+                                    <items>
+                                        <label alignment="left" text="Player2" id="61X-ly-TMT"/>
+                                        <label alignment="right" text="0" id="G79-ev-Zzo"/>
+                                    </items>
+                                </group>
+                                <slider width="1" alignment="left" maximum="50" steps="50" id="7KI-Lr-0aQ">
+                                    <connections>
+                                        <action selector="setPlayerScore2:" destination="BvS-5m-bX0" id="4xv-cV-sLB"/>
+                                    </connections>
+                                </slider>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" layout="vertical" id="7R2-2I-dPa">
+                            <items>
+                                <group width="1" alignment="left" id="UYj-fI-AfC">
+                                    <items>
+                                        <label alignment="left" text="Player3" id="2bU-Li-3hW"/>
+                                        <label alignment="right" text="0" id="ltA-CI-FhF"/>
+                                    </items>
+                                </group>
+                                <slider width="1" alignment="left" maximum="50" steps="50" id="3Fb-E5-psU">
+                                    <connections>
+                                        <action selector="setPlayerScore3:" destination="BvS-5m-bX0" id="7HF-Zh-LwC"/>
+                                    </connections>
+                                </slider>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" layout="vertical" id="hN5-4S-pKk">
+                            <items>
+                                <group width="1" alignment="left" id="9tp-U6-7zB">
+                                    <items>
+                                        <label alignment="left" text="Player4" id="iPO-Qb-N8p"/>
+                                        <label alignment="right" text="0" id="dfq-fa-ePo"/>
+                                    </items>
+                                </group>
+                                <slider width="1" alignment="left" maximum="50" steps="50" id="CT1-LT-A38">
+                                    <connections>
+                                        <action selector="setPlayerScore4:" destination="BvS-5m-bX0" id="R0y-pn-v2x"/>
+                                    </connections>
+                                </slider>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="playerGroup1" destination="DLH-r7-Ecv" id="9b8-yG-RLL"/>
+                        <outlet property="playerGroup2" destination="LgH-Bd-ngN" id="dRT-yG-KRn"/>
+                        <outlet property="playerGroup3" destination="7R2-2I-dPa" id="uHQ-v4-Iwp"/>
+                        <outlet property="playerGroup4" destination="hN5-4S-pKk" id="tYy-hd-Q9d"/>
+                        <outlet property="score1" destination="Yx5-UM-vci" id="GoX-2D-dGW"/>
+                        <outlet property="score2" destination="G79-ev-Zzo" id="xx2-yk-xmP"/>
+                        <outlet property="score3" destination="ltA-CI-FhF" id="Fpa-9j-rnu"/>
+                        <outlet property="score4" destination="dfq-fa-ePo" id="qYM-iL-6AE"/>
+                        <outlet property="sliderPlayer1" destination="1gH-kA-Tnf" id="7OH-2F-Glz"/>
+                        <outlet property="sliderPlayer2" destination="7KI-Lr-0aQ" id="Yhh-XL-cuZ"/>
+                        <outlet property="sliderPlayer3" destination="3Fb-E5-psU" id="Lud-L5-cjV"/>
+                        <outlet property="sliderPlayer4" destination="CT1-LT-A38" id="1Mq-oC-Nem"/>
+                        <segue destination="aVC-li-XMe" kind="relationship" relationship="nextPage" id="fX6-FJ-VHi"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="355" y="-219"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="rkr-TL-duG">
+            <objects>
+                <controller identifier="SettingsView" title="Settings" id="aVC-li-XMe" customClass="SettingsControllerInterfaceController" customModule="Dices_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="UJd-9a-2aS">
+                            <items>
+                                <group width="1" alignment="left" id="IIe-gb-czi">
+                                    <items>
+                                        <label alignment="left" text="Dices" id="dZC-XK-Njb"/>
+                                        <label alignment="right" text="6" id="BXX-kv-Yta"/>
+                                    </items>
+                                </group>
+                                <slider width="1" alignment="left" value="6" maximum="6" steps="6" id="9hb-vX-wEp">
+                                    <connections>
+                                        <action selector="setDiceNum:" destination="aVC-li-XMe" id="ZTI-HI-rQ8"/>
+                                    </connections>
+                                </slider>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" layout="vertical" id="jUB-4S-9Eu">
+                            <items>
+                                <group width="1" alignment="left" id="chE-e2-47K">
+                                    <items>
+                                        <label alignment="left" text="Players" id="zq0-La-w2d"/>
+                                        <label alignment="right" text="1" id="VJN-V3-hdj"/>
+                                    </items>
+                                </group>
+                                <slider width="1" alignment="left" value="1" minimum="1" maximum="4" steps="4" id="ahJ-mC-4yd">
+                                    <connections>
+                                        <action selector="setPlayerNum:" destination="aVC-li-XMe" id="5VY-Av-QvL"/>
+                                    </connections>
+                                </slider>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" hidden="YES" layout="vertical" id="pHO-X7-Y3O">
+                            <items>
+                                <group width="1" alignment="left" id="I00-AW-0Ja">
+                                    <items>
+                                        <label alignment="left" text="MaxScore" id="BMI-fm-NJl"/>
+                                        <label alignment="right" text="60" id="MhJ-Do-Cx3"/>
+                                    </items>
+                                </group>
+                                <slider width="1" alignment="left" value="60" minimum="30" maximum="70" steps="100" id="9xW-Qy-Dmq">
+                                    <connections>
+                                        <action selector="setMaxScore:" destination="aVC-li-XMe" id="Jqv-Ml-mgJ"/>
+                                    </connections>
+                                </slider>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="labelDiceNum" destination="BXX-kv-Yta" id="ocO-lb-5HK"/>
+                        <outlet property="labelMaxScore" destination="MhJ-Do-Cx3" id="Ov9-Y4-sly"/>
+                        <outlet property="labelPlayerNum" destination="VJN-V3-hdj" id="eAs-HN-GZX"/>
+                        <outlet property="sliderDices" destination="9hb-vX-wEp" id="9Cy-89-vRa"/>
+                        <outlet property="sliderMaxScore" destination="9xW-Qy-Dmq" id="lRI-7R-djj"/>
+                        <outlet property="sliderPlayers" destination="ahJ-mC-4yd" id="8no-ED-VZK"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="120" y="110"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+</document>
